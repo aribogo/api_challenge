@@ -1,0 +1,320 @@
+2021-12-29 13:03:22,244 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-7] Securing POST /v1/auth
+2021-12-29 13:03:22,244 DEBUG o.s.s.w.c.SecurityContextPersistenceFilter [http-nio-8080-exec-7] Set SecurityContextHolder to empty SecurityContext
+2021-12-29 13:03:22,245 DEBUG o.s.s.w.a.AnonymousAuthenticationFilter [http-nio-8080-exec-7] Set SecurityContextHolder to anonymous SecurityContext
+2021-12-29 13:03:22,245 DEBUG o.s.s.w.a.i.FilterSecurityInterceptor [http-nio-8080-exec-7] Authorized filter invocation [POST /v1/auth] with attributes [permitAll]
+2021-12-29 13:03:22,245 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-7] Secured POST /v1/auth
+2021-12-29 13:03:22,245 DEBUG o.s.w.s.DispatcherServlet [http-nio-8080-exec-7] POST "/v1/auth", parameters={}
+2021-12-29 13:03:22,245 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping [http-nio-8080-exec-7] Mapped to api.gft.security.AuthenticationController#authenticate(AuthenticationDTO)
+2021-12-29 13:03:22,245 DEBUG o.s.o.j.s.OpenEntityManagerInViewInterceptor [http-nio-8080-exec-7] Opening JPA EntityManager in OpenEntityManagerInViewInterceptor
+2021-12-29 13:03:22,246 DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor [http-nio-8080-exec-7] Read "application/json;charset=UTF-8" to [api.gft.security.dto.AuthenticationDTO@118adfcb]
+2021-12-29 13:03:22,247 DEBUG o.h.q.c.i.CriteriaQueryImpl [http-nio-8080-exec-7] Rendered criteria query -> select generatedAlias0 from User as generatedAlias0 where generatedAlias0.username=:param0
+2021-12-29 13:03:22,248 DEBUG o.h.SQL [http-nio-8080-exec-7] select user0_.id as id1_5_, user0_.password as password2_5_, user0_.role_id as role_id4_5_, user0_.username as username3_5_ from tb_user user0_ where user0_.username=?
+2021-12-29 13:03:22,248 DEBUG o.h.l.Loader [http-nio-8080-exec-7] Result set row: 0
+2021-12-29 13:03:22,249 DEBUG o.h.l.Loader [http-nio-8080-exec-7] Result row: EntityKey[api.gft.security.entity.User#1]
+2021-12-29 13:03:22,249 DEBUG o.h.e.i.TwoPhaseLoad [http-nio-8080-exec-7] Resolving attributes for [api.gft.security.entity.User#1]
+2021-12-29 13:03:22,249 DEBUG o.h.e.i.TwoPhaseLoad [http-nio-8080-exec-7] Processing attribute `password` : value = $2a$12$ipBs2PI.xWhVw8g4O41KEO6c4rSjmYRTCmzYc44mr5ZcKhCIoKQq.
+2021-12-29 13:03:22,249 DEBUG o.h.e.i.TwoPhaseLoad [http-nio-8080-exec-7] Attribute (`password`)  - enhanced for lazy-loading? - false
+2021-12-29 13:03:22,249 DEBUG o.h.e.i.TwoPhaseLoad [http-nio-8080-exec-7] Processing attribute `role` : value = 1
+2021-12-29 13:03:22,249 DEBUG o.h.e.i.TwoPhaseLoad [http-nio-8080-exec-7] Attribute (`role`)  - enhanced for lazy-loading? - false
+2021-12-29 13:03:22,250 DEBUG o.h.SQL [http-nio-8080-exec-7] select role0_.id as id1_4_0_, role0_.name as name2_4_0_ from tb_role role0_ where role0_.id=?
+2021-12-29 13:03:22,250 DEBUG o.h.l.p.e.p.i.EntityReferenceInitializerImpl [http-nio-8080-exec-7] On call to EntityIdentifierReaderImpl#resolve, EntityKey was already known; should only happen on root returns with an optional identifier specified
+2021-12-29 13:03:22,250 DEBUG o.h.e.i.TwoPhaseLoad [http-nio-8080-exec-7] Resolving attributes for [api.gft.security.entity.Role#1]
+2021-12-29 13:03:22,251 DEBUG o.h.e.i.TwoPhaseLoad [http-nio-8080-exec-7] Processing attribute `name` : value = MANAGER
+2021-12-29 13:03:22,251 DEBUG o.h.e.i.TwoPhaseLoad [http-nio-8080-exec-7] Attribute (`name`)  - enhanced for lazy-loading? - false
+2021-12-29 13:03:22,251 DEBUG o.h.e.i.TwoPhaseLoad [http-nio-8080-exec-7] Processing attribute `users` : value = NOT NULL COLLECTION
+2021-12-29 13:03:22,251 DEBUG o.h.e.i.TwoPhaseLoad [http-nio-8080-exec-7] Attribute (`users`)  - enhanced for lazy-loading? - false
+2021-12-29 13:03:22,251 DEBUG o.h.e.i.TwoPhaseLoad [http-nio-8080-exec-7] Done materializing entity [api.gft.security.entity.Role#1]
+2021-12-29 13:03:22,251 DEBUG o.h.l.e.p.AbstractLoadPlanBasedEntityLoader [http-nio-8080-exec-7] Done entity load : api.gft.security.entity.Role#1
+2021-12-29 13:03:22,251 DEBUG o.h.e.i.TwoPhaseLoad [http-nio-8080-exec-7] Processing attribute `username` : value = Admin
+2021-12-29 13:03:22,251 DEBUG o.h.e.i.TwoPhaseLoad [http-nio-8080-exec-7] Attribute (`username`)  - enhanced for lazy-loading? - false
+2021-12-29 13:03:22,251 DEBUG o.h.e.i.TwoPhaseLoad [http-nio-8080-exec-7] Done materializing entity [api.gft.security.entity.User#1]
+2021-12-29 13:03:22,251 DEBUG o.s.o.j.s.OpenEntityManagerInViewInterceptor [http-nio-8080-exec-7] Closing JPA EntityManager in OpenEntityManagerInViewInterceptor
+2021-12-29 13:03:22,251 DEBUG o.s.w.s.DispatcherServlet [http-nio-8080-exec-7] Failed to complete request: org.springframework.web.util.NestedServletException: Handler dispatch failed; nested exception is java.lang.NoSuchMethodError: java.util.Optional.isEmpty()Z
+2021-12-29 13:03:22,252 DEBUG o.s.s.w.c.SecurityContextPersistenceFilter [http-nio-8080-exec-7] Cleared SecurityContextHolder to complete request
+2021-12-29 13:03:22,252 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-7] Securing POST /error
+2021-12-29 13:03:22,252 DEBUG o.s.s.w.c.SecurityContextPersistenceFilter [http-nio-8080-exec-7] Set SecurityContextHolder to empty SecurityContext
+2021-12-29 13:03:22,252 DEBUG o.s.s.w.a.AnonymousAuthenticationFilter [http-nio-8080-exec-7] Set SecurityContextHolder to anonymous SecurityContext
+2021-12-29 13:03:22,252 DEBUG o.s.s.w.FilterChainProxy [http-nio-8080-exec-7] Secured POST /error
+2021-12-29 13:03:22,252 DEBUG o.s.w.s.DispatcherServlet [http-nio-8080-exec-7] "ERROR" dispatch for POST "/error", parameters={}
+2021-12-29 13:03:22,253 DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping [http-nio-8080-exec-7] Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2021-12-29 13:03:22,253 DEBUG o.s.o.j.s.OpenEntityManagerInViewInterceptor [http-nio-8080-exec-7] Opening JPA EntityManager in OpenEntityManagerInViewInterceptor
+2021-12-29 13:03:22,253 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor [http-nio-8080-exec-7] Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2021-12-29 13:03:22,253 DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor [http-nio-8080-exec-7] Writing [{timestamp=Wed Dec 29 13:03:22 BRT 2021, status=500, error=Internal Server Error, path=/v1/auth}]
+2021-12-29 13:03:22,254 DEBUG o.s.o.j.s.OpenEntityManagerInViewInterceptor [http-nio-8080-exec-7] Closing JPA EntityManager in OpenEntityManagerInViewInterceptor
+2021-12-29 13:03:22,255 DEBUG o.s.w.s.DispatcherServlet [http-nio-8080-exec-7] Exiting from "ERROR" dispatch, status 500
+2021-12-29 13:03:22,255 DEBUG o.s.s.w.c.SecurityContextPersistenceFilter [http-nio-8080-exec-7] Cleared SecurityContextHolder to complete request
+2021-12-29 13:04:40,917 DEBUG o.s.c.s.DefaultLifecycleProcessor [SpringApplicationShutdownHook] Stopping beans in phase 2147483647
+2021-12-29 13:04:40,918 DEBUG o.s.c.s.DefaultLifecycleProcessor [SpringApplicationShutdownHook] Bean 'webServerGracefulShutdown' completed its stop procedure
+2021-12-29 13:04:40,919 DEBUG o.s.c.s.DefaultLifecycleProcessor [SpringApplicationShutdownHook] Stopping beans in phase 2147483646
+2021-12-29 13:04:41,126 DEBUG o.s.c.s.DefaultLifecycleProcessor [SpringApplicationShutdownHook] Bean 'webServerStartStop' completed its stop procedure
+2021-12-29 13:04:41,128 DEBUG o.s.s.c.ThreadPoolTaskExecutor [SpringApplicationShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
+2021-12-29 13:04:41,132 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-12-29 13:04:41,132 DEBUG o.h.i.SessionFactoryImpl [SpringApplicationShutdownHook] HHH000031: Closing
+2021-12-29 13:04:41,133 DEBUG o.h.t.s.TypeConfiguration$Scope [SpringApplicationShutdownHook] Un-scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration$Scope@558e20d2] from SessionFactory [org.hibernate.internal.SessionFactoryImpl@452e19ca]
+2021-12-29 13:04:41,133 DEBUG o.h.s.i.AbstractServiceRegistryImpl [SpringApplicationShutdownHook] Implicitly destroying ServiceRegistry on de-registration of all child ServiceRegistries
+2021-12-29 13:04:41,135 DEBUG o.h.b.r.i.BootstrapServiceRegistryImpl [SpringApplicationShutdownHook] Implicitly destroying Boot-strap registry on de-registration of all child ServiceRegistries
+2021-12-29 13:55:07,530 WARN o.h.e.j.s.SqlExceptionHelper [http-nio-8080-exec-2] SQL Error: 42122, SQLState: 42S22
+2021-12-29 13:55:07,537 ERROR o.h.e.j.s.SqlExceptionHelper [http-nio-8080-exec-2] Column "PARTY1_.PARTY_ID" not found; SQL statement:
+select politician0_.id as id1_2_0_, politician0_.complement as compleme2_2_0_, politician0_.number as number3_2_0_, politician0_.street_name as street_n4_2_0_, politician0_.zipcode as zipcode5_2_0_, politician0_.cpf as cpf6_2_0_, politician0_.file_folder as file_fol7_2_0_, politician0_.file_name as file_nam8_2_0_, politician0_.file_size as file_siz9_2_0_, politician0_.file_type as file_ty10_2_0_, politician0_.is_leader as is_lead11_2_0_, politician0_.name as name12_2_0_, politician0_.id_party as id_part15_2_0_, politician0_.phone_number as phone_n13_2_0_, politician0_.position as positio14_2_0_, party1_.party_id as party_id1_1_1_, party1_.party_initials as party_in2_1_1_, party1_.party_name as party_na3_1_1_ from tb_politician politician0_ inner join tb_party party1_ on politician0_.id_party=party1_.party_id where politician0_.id=? [42122-200]
+2021-12-29 13:55:39,273 WARN o.h.e.j.s.SqlExceptionHelper [http-nio-8080-exec-3] SQL Error: 42122, SQLState: 42S22
+2021-12-29 13:55:39,273 ERROR o.h.e.j.s.SqlExceptionHelper [http-nio-8080-exec-3] Column "PARTY0_.PARTY_ID" not found; SQL statement:
+select party0_.party_id as party_id1_1_, party0_.party_initials as party_in2_1_, party0_.party_name as party_na3_1_ from tb_party party0_ [42122-200]
+2021-12-29 13:56:53,910 WARN o.h.e.j.s.SqlExceptionHelper [http-nio-8080-exec-1] SQL Error: 42122, SQLState: 42S22
+2021-12-29 13:56:54,169 ERROR o.h.e.j.s.SqlExceptionHelper [http-nio-8080-exec-1] Column "PARTY0_.PARTY_ID" not found; SQL statement:
+select party0_.party_id as party_id1_1_, party0_.party_initials as party_in2_1_, party0_.party_name as party_na3_1_ from tb_party party0_ [42122-200]
+2021-12-29 14:05:45,251 WARN o.h.e.j.s.SqlExceptionHelper [http-nio-8080-exec-10] SQL Error: 90036, SQLState: 90036
+2021-12-29 14:05:45,251 ERROR o.h.e.j.s.SqlExceptionHelper [http-nio-8080-exec-10] Sequence "HIBERNATE_SEQUENCE" not found; SQL statement:
+call next value for hibernate_sequence [90036-200]
+2021-12-29 14:05:45,254 ERROR a.g.s.PoliticianService [http-nio-8080-exec-10] org.springframework.dao.InvalidDataAccessResourceUsageException: could not prepare statement; SQL [call next value for hibernate_sequence]; nested exception is org.hibernate.exception.SQLGrammarException: could not prepare statement
+2021-12-29 14:05:55,639 WARN o.h.e.j.s.SqlExceptionHelper [http-nio-8080-exec-1] SQL Error: 90036, SQLState: 90036
+2021-12-29 14:05:55,640 ERROR o.h.e.j.s.SqlExceptionHelper [http-nio-8080-exec-1] Sequence "HIBERNATE_SEQUENCE" not found; SQL statement:
+call next value for hibernate_sequence [90036-200]
+2021-12-29 14:05:55,641 ERROR a.g.s.PoliticianService [http-nio-8080-exec-1] org.springframework.dao.InvalidDataAccessResourceUsageException: could not prepare statement; SQL [call next value for hibernate_sequence]; nested exception is org.hibernate.exception.SQLGrammarException: could not prepare statement
+2021-12-29 14:07:24,934 WARN o.h.e.j.s.SqlExceptionHelper [http-nio-8080-exec-4] SQL Error: 90036, SQLState: 90036
+2021-12-29 14:07:24,938 ERROR o.h.e.j.s.SqlExceptionHelper [http-nio-8080-exec-4] Sequence "HIBERNATE_SEQUENCE" not found; SQL statement:
+call next value for hibernate_sequence [90036-200]
+2021-12-29 14:07:34,345 ERROR a.g.s.PoliticianService [http-nio-8080-exec-4] org.springframework.dao.InvalidDataAccessResourceUsageException: could not prepare statement; SQL [call next value for hibernate_sequence]; nested exception is org.hibernate.exception.SQLGrammarException: could not prepare statement
+2021-12-29 14:24:05,834 WARN o.h.e.j.s.SqlExceptionHelper [http-nio-8080-exec-9] SQL Error: 90036, SQLState: 90036
+2021-12-29 14:24:05,836 ERROR o.h.e.j.s.SqlExceptionHelper [http-nio-8080-exec-9] Sequence "HIBERNATE_SEQUENCE" not found; SQL statement:
+call next value for hibernate_sequence [90036-200]
+2021-12-29 14:24:46,021 WARN o.h.e.j.s.SqlExceptionHelper [http-nio-8080-exec-9] SQL Error: 90036, SQLState: 90036
+2021-12-29 14:24:46,024 ERROR o.h.e.j.s.SqlExceptionHelper [http-nio-8080-exec-9] Sequence "HIBERNATE_SEQUENCE" not found; SQL statement:
+call next value for hibernate_sequence [90036-200]
+2021-12-29 14:24:46,772 ERROR a.g.s.PoliticianService [http-nio-8080-exec-9] org.springframework.dao.InvalidDataAccessResourceUsageException: could not prepare statement; SQL [call next value for hibernate_sequence]; nested exception is org.hibernate.exception.SQLGrammarException: could not prepare statement
+2021-12-29 14:27:54,921 WARN o.h.e.j.s.SqlExceptionHelper [http-nio-8080-exec-2] SQL Error: 90036, SQLState: 90036
+2021-12-29 14:27:54,924 ERROR o.h.e.j.s.SqlExceptionHelper [http-nio-8080-exec-2] Sequence "HIBERNATE_SEQUENCE" not found; SQL statement:
+call next value for hibernate_sequence [90036-200]
+2021-12-29 14:28:04,300 ERROR a.g.s.PoliticianService [http-nio-8080-exec-2] org.springframework.dao.InvalidDataAccessResourceUsageException: could not prepare statement; SQL [call next value for hibernate_sequence]; nested exception is org.hibernate.exception.SQLGrammarException: could not prepare statement
+2021-12-29 14:28:54,274 WARN o.h.e.j.s.SqlExceptionHelper [http-nio-8080-exec-3] SQL Error: 90036, SQLState: 90036
+2021-12-29 14:28:54,278 ERROR o.h.e.j.s.SqlExceptionHelper [http-nio-8080-exec-3] Sequence "HIBERNATE_SEQUENCE" not found; SQL statement:
+call next value for hibernate_sequence [90036-200]
+2021-12-29 14:28:55,997 ERROR a.g.s.PoliticianService [http-nio-8080-exec-3] org.springframework.dao.InvalidDataAccessResourceUsageException: could not prepare statement; SQL [call next value for hibernate_sequence]; nested exception is org.hibernate.exception.SQLGrammarException: could not prepare statement
+2021-12-29 14:29:12,788 ERROR o.h.i.e.TableGenerator [http-nio-8080-exec-2] HHH000351: Could not read or init a hi value
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HIBERNATE_SEQUENCES" not found; SQL statement:
+select tbl.next_val from hibernate_sequences tbl where tbl.sequence_name=? for update [42102-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:453) ~[h2-1.4.200.jar:1.4.200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429) ~[h2-1.4.200.jar:1.4.200]
+	at org.h2.message.DbException.get(DbException.java:205) ~[h2-1.4.200.jar:1.4.200]
+	at org.h2.message.DbException.get(DbException.java:181) ~[h2-1.4.200.jar:1.4.200]
+	at org.h2.command.Parser.readTableOrView(Parser.java:7628) ~[h2-1.4.200.jar:1.4.200]
+	at org.h2.command.Parser.readTableFilter(Parser.java:1970) ~[h2-1.4.200.jar:1.4.200]
+	at org.h2.command.Parser.parseSelectFromPart(Parser.java:2827) ~[h2-1.4.200.jar:1.4.200]
+	at org.h2.command.Parser.parseSelect(Parser.java:2959) ~[h2-1.4.200.jar:1.4.200]
+	at org.h2.command.Parser.parseQuerySub(Parser.java:2817) ~[h2-1.4.200.jar:1.4.200]
+	at org.h2.command.Parser.parseSelectUnion(Parser.java:2649) ~[h2-1.4.200.jar:1.4.200]
+	at org.h2.command.Parser.parseQuery(Parser.java:2620) ~[h2-1.4.200.jar:1.4.200]
+	at org.h2.command.Parser.parsePrepared(Parser.java:868) ~[h2-1.4.200.jar:1.4.200]
+	at org.h2.command.Parser.parse(Parser.java:843) ~[h2-1.4.200.jar:1.4.200]
+	at org.h2.command.Parser.parse(Parser.java:815) ~[h2-1.4.200.jar:1.4.200]
+	at org.h2.command.Parser.prepareCommand(Parser.java:738) ~[h2-1.4.200.jar:1.4.200]
+	at org.h2.engine.Session.prepareLocal(Session.java:657) ~[h2-1.4.200.jar:1.4.200]
+	at org.h2.engine.Session.prepareCommand(Session.java:595) ~[h2-1.4.200.jar:1.4.200]
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1235) ~[h2-1.4.200.jar:1.4.200]
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:76) ~[h2-1.4.200.jar:1.4.200]
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:352) ~[h2-1.4.200.jar:1.4.200]
+	at com.zaxxer.hikari.pool.ProxyConnection.prepareStatement(ProxyConnection.java:337) ~[HikariCP-4.0.3.jar:?]
+	at com.zaxxer.hikari.pool.HikariProxyConnection.prepareStatement(HikariProxyConnection.java) ~[HikariCP-4.0.3.jar:?]
+	at org.hibernate.id.enhanced.TableGenerator.prepareStatement(TableGenerator.java:687) ~[hibernate-core-5.6.3.Final.jar:5.6.3.Final]
+	at org.hibernate.id.enhanced.TableGenerator.access$200(TableGenerator.java:131) ~[hibernate-core-5.6.3.Final.jar:5.6.3.Final]
+	at org.hibernate.id.enhanced.TableGenerator$1$1.execute(TableGenerator.java:585) ~[hibernate-core-5.6.3.Final.jar:5.6.3.Final]
+	at org.hibernate.id.enhanced.TableGenerator$1$1.execute(TableGenerator.java:578) ~[hibernate-core-5.6.3.Final.jar:5.6.3.Final]
+	at org.hibernate.jdbc.WorkExecutor.executeReturningWork(WorkExecutor.java:55) ~[hibernate-core-5.6.3.Final.jar:5.6.3.Final]
+	at org.hibernate.jdbc.AbstractReturningWork.accept(AbstractReturningWork.java:34) ~[hibernate-core-5.6.3.Final.jar:5.6.3.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:57) ~[hibernate-core-5.6.3.Final.jar:5.6.3.Final]
+	at org.hibernate.id.enhanced.TableGenerator$1.getNextValue(TableGenerator.java:577) ~[hibernate-core-5.6.3.Final.jar:5.6.3.Final]
+	at org.hibernate.id.enhanced.NoopOptimizer.generate(NoopOptimizer.java:40) ~[hibernate-core-5.6.3.Final.jar:5.6.3.Final]
+	at org.hibernate.id.enhanced.TableGenerator.generate(TableGenerator.java:573) ~[hibernate-core-5.6.3.Final.jar:5.6.3.Final]
+	at org.hibernate.event.internal.AbstractSaveEventListener.saveWithGeneratedId(AbstractSaveEventListener.java:115) ~[hibernate-core-5.6.3.Final.jar:5.6.3.Final]
+	at org.hibernate.event.internal.DefaultPersistEventListener.entityIsTransient(DefaultPersistEventListener.java:185) ~[hibernate-core-5.6.3.Final.jar:5.6.3.Final]
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:128) ~[hibernate-core-5.6.3.Final.jar:5.6.3.Final]
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:55) ~[hibernate-core-5.6.3.Final.jar:5.6.3.Final]
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:107) ~[hibernate-core-5.6.3.Final.jar:5.6.3.Final]
+	at org.hibernate.internal.SessionImpl.firePersist(SessionImpl.java:760) ~[hibernate-core-5.6.3.Final.jar:5.6.3.Final]
+	at org.hibernate.internal.SessionImpl.persist(SessionImpl.java:746) ~[hibernate-core-5.6.3.Final.jar:5.6.3.Final]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
+	at org.springframework.orm.jpa.ExtendedEntityManagerCreator$ExtendedEntityManagerInvocationHandler.invoke(ExtendedEntityManagerCreator.java:362) ~[spring-orm-5.3.14.jar:5.3.14]
+	at jdk.proxy8.$Proxy202.persist(Unknown Source) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
+	at org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:311) ~[spring-orm-5.3.14.jar:5.3.14]
+	at jdk.proxy8.$Proxy202.persist(Unknown Source) ~[?:?]
+	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.save(SimpleJpaRepository.java:624) ~[spring-data-jpa-2.6.0.jar:2.6.0]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker$RepositoryFragmentMethodInvoker.lambda$new$0(RepositoryMethodInvoker.java:289) ~[spring-data-commons-2.6.0.jar:2.6.0]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:137) [spring-data-commons-2.6.0.jar:2.6.0]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:121) [spring-data-commons-2.6.0.jar:2.6.0]
+	at org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:529) [spring-data-commons-2.6.0.jar:2.6.0]
+	at org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:285) [spring-data-commons-2.6.0.jar:2.6.0]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:638) [spring-data-commons-2.6.0.jar:2.6.0]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) [spring-aop-5.3.14.jar:5.3.14]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:163) [spring-data-commons-2.6.0.jar:2.6.0]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:138) [spring-data-commons-2.6.0.jar:2.6.0]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) [spring-aop-5.3.14.jar:5.3.14]
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:80) [spring-data-commons-2.6.0.jar:2.6.0]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) [spring-aop-5.3.14.jar:5.3.14]
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123) [spring-tx-5.3.14.jar:5.3.14]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388) [spring-tx-5.3.14.jar:5.3.14]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) [spring-tx-5.3.14.jar:5.3.14]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) [spring-aop-5.3.14.jar:5.3.14]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137) [spring-tx-5.3.14.jar:5.3.14]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) [spring-aop-5.3.14.jar:5.3.14]
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:174) [spring-data-jpa-2.6.0.jar:2.6.0]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) [spring-aop-5.3.14.jar:5.3.14]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97) [spring-aop-5.3.14.jar:5.3.14]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) [spring-aop-5.3.14.jar:5.3.14]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215) [spring-aop-5.3.14.jar:5.3.14]
+	at jdk.proxy8.$Proxy205.save(Unknown Source) [?:?]
+	at api.gft.service.PoliticianService.savePolitician(PoliticianService.java:54) [classes/:?]
+	at api.gft.controller.PoliticianController.savePolitician(PoliticianController.java:45) [classes/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) [spring-web-5.3.14.jar:5.3.14]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) [spring-web-5.3.14.jar:5.3.14]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) [spring-webmvc-5.3.14.jar:5.3.14]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) [spring-webmvc-5.3.14.jar:5.3.14]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) [spring-webmvc-5.3.14.jar:5.3.14]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) [spring-webmvc-5.3.14.jar:5.3.14]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067) [spring-webmvc-5.3.14.jar:5.3.14]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963) [spring-webmvc-5.3.14.jar:5.3.14]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) [spring-webmvc-5.3.14.jar:5.3.14]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) [spring-webmvc-5.3.14.jar:5.3.14]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681) [tomcat-embed-core-9.0.56.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) [spring-webmvc-5.3.14.jar:5.3.14]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) [tomcat-embed-core-9.0.56.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) [tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-embed-websocket-9.0.56.jar:9.0.56]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:327) [spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:115) [spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:81) [spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:122) [spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:116) [spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:126) [spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:81) [spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:109) [spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:149) [spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) [spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.6.1.jar:5.6.1]
+	at api.gft.security.filter.AuthenticationFilter.doFilterInternal(AuthenticationFilter.java:49) [classes/:?]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) [spring-web-5.3.14.jar:5.3.14]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103) [spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89) [spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) [spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) [spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) [spring-web-5.3.14.jar:5.3.14]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:110) [spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:80) [spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55) [spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) [spring-web-5.3.14.jar:5.3.14]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) [spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:211) [spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183) [spring-security-web-5.6.1.jar:5.6.1]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:354) [spring-web-5.3.14.jar:5.3.14]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:267) [spring-web-5.3.14.jar:5.3.14]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-5.3.14.jar:5.3.14]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) [spring-web-5.3.14.jar:5.3.14]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) [spring-web-5.3.14.jar:5.3.14]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) [spring-web-5.3.14.jar:5.3.14]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-5.3.14.jar:5.3.14]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) [spring-web-5.3.14.jar:5.3.14]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) [tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540) [tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) [tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) [tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382) [tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895) [tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1732) [tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-embed-core-9.0.56.jar:9.0.56]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.56.jar:9.0.56]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
+2021-12-29 14:29:13,389 WARN o.h.e.j.s.SqlExceptionHelper [http-nio-8080-exec-2] SQL Error: 42102, SQLState: 42S02
+2021-12-29 14:29:13,391 ERROR o.h.e.j.s.SqlExceptionHelper [http-nio-8080-exec-2] Table "HIBERNATE_SEQUENCES" not found; SQL statement:
+select tbl.next_val from hibernate_sequences tbl where tbl.sequence_name=? for update [42102-200]
+2021-12-29 14:29:19,991 ERROR a.g.s.PoliticianService [http-nio-8080-exec-2] org.springframework.dao.InvalidDataAccessResourceUsageException: error performing isolated work; SQL [n/a]; nested exception is org.hibernate.exception.SQLGrammarException: error performing isolated work
+2021-12-29 14:36:15,155 WARN o.h.e.j.s.SqlExceptionHelper [http-nio-8080-exec-7] SQL Error: 90036, SQLState: 90036
+2021-12-29 14:36:15,431 ERROR o.h.e.j.s.SqlExceptionHelper [http-nio-8080-exec-7] Sequence "HIBERNATE_SEQUENCE" not found; SQL statement:
+call next value for hibernate_sequence [90036-200]
+2021-12-29 14:36:18,292 ERROR a.g.s.PoliticianService [http-nio-8080-exec-7] org.springframework.dao.InvalidDataAccessResourceUsageException: could not prepare statement; SQL [call next value for hibernate_sequence]; nested exception is org.hibernate.exception.SQLGrammarException: could not prepare statement
+2021-12-29 14:37:53,322 WARN o.h.e.j.s.SqlExceptionHelper [http-nio-8080-exec-1] SQL Error: 90036, SQLState: 90036
+2021-12-29 14:37:53,586 ERROR o.h.e.j.s.SqlExceptionHelper [http-nio-8080-exec-1] Sequence "HIBERNATE_SEQUENCE" not found; SQL statement:
+call next value for hibernate_sequence [90036-200]
+2021-12-29 14:37:55,443 ERROR a.g.s.PoliticianService [http-nio-8080-exec-1] org.springframework.dao.InvalidDataAccessResourceUsageException: could not prepare statement; SQL [call next value for hibernate_sequence]; nested exception is org.hibernate.exception.SQLGrammarException: could not prepare statement
+2021-12-29 14:38:45,206 ERROR a.g.s.LawSuitService [http-nio-8080-exec-2] javax.validation.ConstraintViolationException: Validation failed for classes [api.gft.entity.LawSuit] during persist time for groups [javax.validation.groups.Default, ]
+List of constraint violations:[
+	ConstraintViolationImpl{interpolatedMessage='Can not be null', propertyPath=id, rootBeanClass=class api.gft.entity.LawSuit, messageTemplate='Can not be null'}
+]
+2021-12-29 14:40:19,961 ERROR a.g.s.LawSuitService [http-nio-8080-exec-3] javax.validation.ConstraintViolationException: Validation failed for classes [api.gft.entity.LawSuit] during persist time for groups [javax.validation.groups.Default, ]
+List of constraint violations:[
+	ConstraintViolationImpl{interpolatedMessage='Can not be null', propertyPath=id, rootBeanClass=class api.gft.entity.LawSuit, messageTemplate='Can not be null'}
+]
+2021-12-29 14:41:03,921 WARN o.h.e.j.s.SqlExceptionHelper [http-nio-8080-exec-2] SQL Error: 90036, SQLState: 90036
+2021-12-29 14:41:03,924 ERROR o.h.e.j.s.SqlExceptionHelper [http-nio-8080-exec-2] Sequence "HIBERNATE_SEQUENCE" not found; SQL statement:
+call next value for hibernate_sequence [90036-200]
+2021-12-29 14:41:18,468 ERROR a.g.s.LawSuitService [http-nio-8080-exec-2] org.springframework.dao.InvalidDataAccessResourceUsageException: could not prepare statement; SQL [call next value for hibernate_sequence]; nested exception is org.hibernate.exception.SQLGrammarException: could not prepare statement
+2021-12-29 14:41:37,518 WARN o.h.e.j.s.SqlExceptionHelper [http-nio-8080-exec-1] SQL Error: 90036, SQLState: 90036
+2021-12-29 14:41:37,520 ERROR o.h.e.j.s.SqlExceptionHelper [http-nio-8080-exec-1] Sequence "HIBERNATE_SEQUENCE" not found; SQL statement:
+call next value for hibernate_sequence [90036-200]
+2021-12-29 14:41:40,220 ERROR a.g.s.LawSuitService [http-nio-8080-exec-1] org.springframework.dao.InvalidDataAccessResourceUsageException: could not prepare statement; SQL [call next value for hibernate_sequence]; nested exception is org.hibernate.exception.SQLGrammarException: could not prepare statement
+2021-12-29 14:44:51,501 WARN o.h.e.j.s.SqlExceptionHelper [http-nio-8080-exec-4] SQL Error: 90036, SQLState: 90036
+2021-12-29 14:44:51,501 ERROR o.h.e.j.s.SqlExceptionHelper [http-nio-8080-exec-4] Sequence "HIBERNATE_SEQUENCE" not found; SQL statement:
+call next value for hibernate_sequence [90036-200]
+2021-12-29 14:44:51,503 ERROR a.g.s.PoliticianService [http-nio-8080-exec-4] org.springframework.dao.InvalidDataAccessResourceUsageException: could not prepare statement; SQL [call next value for hibernate_sequence]; nested exception is org.hibernate.exception.SQLGrammarException: could not prepare statement
+2021-12-29 14:49:46,937 ERROR a.g.s.PoliticianService [http-nio-8080-exec-1] org.springframework.transaction.TransactionSystemException: Could not commit JPA transaction; nested exception is javax.persistence.RollbackException: Error while committing the transaction
+2021-12-29 14:57:07,925 ERROR a.g.s.BillService [http-nio-8080-exec-1] javax.validation.ConstraintViolationException: Validation failed for classes [api.gft.entity.Bill] during persist time for groups [javax.validation.groups.Default, ]
+List of constraint violations:[
+	ConstraintViolationImpl{interpolatedMessage='Can not be null', propertyPath=id, rootBeanClass=class api.gft.entity.Bill, messageTemplate='Can not be null'}
+]
+2021-12-29 14:57:30,623 ERROR a.g.s.BillService [http-nio-8080-exec-9] javax.validation.ConstraintViolationException: Validation failed for classes [api.gft.entity.Bill] during persist time for groups [javax.validation.groups.Default, ]
+List of constraint violations:[
+	ConstraintViolationImpl{interpolatedMessage='Can not be null', propertyPath=id, rootBeanClass=class api.gft.entity.Bill, messageTemplate='Can not be null'}
+]
+2021-12-29 15:12:01,825 ERROR o.f.c.i.c.DbMigrate [restartedMain] Migration of schema "PUBLIC" to version "01 - politician party trial lawproject" failed! Please restore backups and roll back database and code!
+2021-12-29 15:13:19,640 ERROR o.f.c.i.c.DbMigrate [restartedMain] Migration of schema "PUBLIC" to version "01 - politician party trial lawproject" failed! Please restore backups and roll back database and code!
+2021-12-29 15:17:21,077 ERROR o.f.c.i.c.DbMigrate [restartedMain] Migration of schema "PUBLIC" to version "01 - politician party trial lawproject" failed! Please restore backups and roll back database and code!
+2021-12-29 15:37:59,138 ERROR o.f.c.i.c.DbMigrate [restartedMain] Migration of schema "PUBLIC" to version "03 - Database seeding" failed! Please restore backups and roll back database and code!
+2021-12-30 09:34:16,374 ERROR o.f.c.i.c.DbMigrate [restartedMain] Migration of schema "PUBLIC" to version "03 - Database seeding" failed! Please restore backups and roll back database and code!
+2021-12-30 09:36:08,025 WARN o.h.e.j.s.SqlExceptionHelper [http-nio-8080-exec-5] SQL Error: 23505, SQLState: 23505
+2021-12-30 09:36:08,030 ERROR o.h.e.j.s.SqlExceptionHelper [http-nio-8080-exec-5] Unique index or primary key violation: "PRIMARY KEY ON PUBLIC.TB_POLITICIAN(ID) [1, 'Carolina Milena Jaqueline Silva', '1', '463.389.173-10', STRINGDECODE('Rua Soldado Sin\u00e9sio de Arag\u00e3o'), '895', NULL, '51160-380', '8135867148', FALSE, 'png', 'ParA', NULL, 'profileCarolina.png', 1]"; SQL statement:
+insert into tb_politician (complement, number, street_name, zipcode, cpf, file_folder, file_name, file_size, file_type, is_leader, name, id_party, phone_number, position, id) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) [23505-200]
+2021-12-30 09:36:08,037 ERROR a.g.s.PoliticianService [http-nio-8080-exec-5] org.springframework.dao.DataIntegrityViolationException: could not execute statement; SQL [n/a]; constraint ["PRIMARY KEY ON PUBLIC.TB_POLITICIAN(ID) [1, 'Carolina Milena Jaqueline Silva', '1', '463.389.173-10', STRINGDECODE('Rua Soldado Sin\u00e9sio de Arag\u00e3o'), '895', NULL, '51160-380', '8135867148', FALSE, 'png', 'ParA', NULL, 'profileCarolina.png', 1]"; SQL statement:
+insert into tb_politician (complement, number, street_name, zipcode, cpf, file_folder, file_name, file_size, file_type, is_leader, name, id_party, phone_number, position, id) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) [23505-200]]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement
+2021-12-30 10:31:32,289 ERROR a.g.s.PoliticianService [http-nio-8080-exec-4] java.lang.NullPointerException: Cannot invoke "java.util.Set.size()" because the return value of "api.gft.entity.Politician.getLawproject()" is null
+2021-12-30 10:52:53,194 ERROR a.g.s.PoliticianService [http-nio-8080-exec-2] java.lang.NullPointerException: Cannot invoke "java.util.Set.size()" because the return value of "api.gft.entity.Politician.getLawproject()" is null
+2021-12-30 10:57:12,559 ERROR a.g.s.PoliticianService [http-nio-8080-exec-4] java.lang.NullPointerException: Cannot invoke "java.util.Set.size()" because the return value of "api.gft.entity.Politician.getLawproject()" is null
+2021-12-30 10:57:20,264 ERROR a.g.s.PoliticianService [http-nio-8080-exec-5] java.lang.NullPointerException: Cannot invoke "java.util.Set.size()" because the return value of "api.gft.entity.Politician.getLawproject()" is null
+2021-12-30 11:03:59,630 ERROR a.g.s.PoliticianService [http-nio-8080-exec-8] java.lang.NullPointerException: Cannot invoke "java.util.Set.size()" because the return value of "api.gft.entity.Politician.getLawproject()" is null

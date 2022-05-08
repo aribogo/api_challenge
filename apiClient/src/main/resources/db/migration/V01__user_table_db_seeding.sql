@@ -1,0 +1,12 @@
+CREATE TABLE tb_user (
+					id BIGINT AUTO_INCREMENT PRIMARY KEY, 
+					username VARCHAR(255) NOT NULL,
+					password VARCHAR(255) NOT NULL
+					);
+
+CREATE UNIQUE INDEX uidx_username
+ON tb_user (username);
+
+INSERT INTO tb_user (username, password) VALUES ('User', '$2a$12$ipBs2PI.xWhVw8g4O41KEO6c4rSjmYRTCmzYc44mr5ZcKhCIoKQq.');
+
+CREATE SEQUENCE HIBERNATE_SEQUENCE START WITH 2 INCREMENT BY 1;
